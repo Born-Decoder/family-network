@@ -1,3 +1,7 @@
+package famnet;
+
+import java.util.ArrayList;
+
 public class Node {
 
     private String id = null;
@@ -6,6 +10,8 @@ public class Node {
     private String dob = null;
     private String gender = null;
     private String profession = null;
+    private ArrayList<String> children = new ArrayList<String>();
+    private ArrayList<String> spouses = new ArrayList<String>();
 
     public Node () {}
 
@@ -15,7 +21,9 @@ public class Node {
         String location,
         String dob,
         String gender,
-        String profession
+        String profession,
+        ArrayList<String> children,
+        ArrayList<String> spouses
     ) {
         this.id = id;
         this.name = name;
@@ -23,6 +31,8 @@ public class Node {
         this.dob = dob;
         this.gender = gender;
         this.profession = profession;
+        this.children = children;
+        this.spouses = spouses;
     }
 
     public void setId (String id) {
@@ -49,6 +59,30 @@ public class Node {
         this.profession = profession;
     }
 
+    public void setChildren (ArrayList<String> children) {
+        this.children = children;
+    }
+
+    public void setSpouses (ArrayList<String> spouses) {
+        this.spouses = spouses;
+    }
+
+    public void addChild (String childId) {
+        children.add(childId);
+    }
+
+    public void addSpouse (String spouseId) {
+        spouses.add(spouseId);
+    }
+
+    public void removeChild (String childId) {
+        children.remove(childId);
+    }
+
+    public void removeSpouse (String spouseId) {
+        spouses.remove(spouseId);
+    }
+
     public String getId () {
         return id;
     }
@@ -71,5 +105,13 @@ public class Node {
 
     public String getProfession () {
         return profession;
+    }
+
+    public ArrayList<String> getChildren () {
+        return children;
+    }
+
+    public ArrayList<String> getSpouses () {
+        return spouses;
     }
 }
