@@ -143,6 +143,26 @@ public class Network {
         }
     }
 
+    public Map<String, Node> getAllNodes() {
+        return nodeMap;
+    }
+
+    public ArrayList<String> listAllNodes() {
+        if (nodeMap.isEmpty()) {
+            System.out.println("The network is empty.");
+            return new ArrayList<>();
+        }
+
+        ArrayList<String> nodeList = new ArrayList<>();
+        for (Node node : nodeMap.values()) {
+            nodeList.add(node.getId());
+        }
+
+        return nodeList;
+    }
+
+    // TO DO - DEGREE BASED RETRIEVALS
+
     public void printGraph() {
         if (nodeMap.isEmpty()) {
             System.out.println("The network is empty.");
