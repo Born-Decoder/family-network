@@ -11,6 +11,7 @@ public class Node {
     private ArrayList<String> parents = new ArrayList<String>();
     private ArrayList<String> children = new ArrayList<String>();
     private ArrayList<String> spouses = new ArrayList<String>();
+    private ArrayList<String> friends = new ArrayList<>();
 
     public Node () {}
 
@@ -23,7 +24,8 @@ public class Node {
         String profession,
         ArrayList<String> parents,
         ArrayList<String> children,
-        ArrayList<String> spouses
+        ArrayList<String> spouses,
+        ArrayList<String> friends
     ) {
         this.id = id;
         this.name = name;
@@ -34,6 +36,7 @@ public class Node {
         this.parents = parents;
         this.children = children;
         this.spouses = spouses;
+        this.friends = friends;
     }
 
     public void setId (String id) {
@@ -72,6 +75,10 @@ public class Node {
         this.spouses = spouses;
     }
 
+    public void setFriends (ArrayList<String> friends) {
+        this.friends = friends;
+    }
+
     public void addParent (String parentId) {
         parents.add(parentId);
     }
@@ -84,6 +91,10 @@ public class Node {
         spouses.add(spouseId);
     }
 
+    public void addFriend (String friendId) {
+        friends.add(friendId);
+    }
+
     public void removeParent (String parentId) {
         parents.remove(parentId);
     }
@@ -94,6 +105,10 @@ public class Node {
 
     public void removeSpouse (String spouseId) {
         spouses.remove(spouseId);
+    }
+
+    public void removeFriend (String friendId) {
+        friends.remove(friendId);
     }
 
     public String getId () {
@@ -130,5 +145,9 @@ public class Node {
 
     public ArrayList<String> getSpouses () {
         return spouses;
+    }
+
+    public ArrayList<String> getFriends () {
+        return friends;
     }
 }

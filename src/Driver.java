@@ -17,22 +17,20 @@ public class Driver {
         network.addChild(alice_id, bob_id, charlie_id);
         network.printGraph();
         System.out.println("-------------------------------------------------");
-        System.out.println("-------------------------------------------------");
+        
+        // Add another child to Alice and Bob
+        network.addChild(alice_id, bob_id, diana_id);
+        network.printGraph();
         System.out.println("-------------------------------------------------");
 
         // Remove a child
         network.removeChild(alice_id, bob_id, charlie_id);
-        network.addChild(alice_id, bob_id, diana_id);
         network.printGraph();
-        System.out.println("-------------------------------------------------");
-        System.out.println("-------------------------------------------------");
         System.out.println("-------------------------------------------------");
 
         // Remove a spouse relationship
         network.removeSpouse(alice_id, bob_id);
         network.printGraph();
-        System.out.println("-------------------------------------------------");
-        System.out.println("-------------------------------------------------");
         System.out.println("-------------------------------------------------");
 
         // Modify node details
@@ -41,7 +39,21 @@ public class Driver {
         // Display nodes after modifications
         network.printGraph();
         System.out.println("-------------------------------------------------");
+
+        // Add friendships between nodes
+        network.addFriend(alice_id, bob_id);
+        network.addFriend(alice_id, charlie_id); 
+        network.addFriend(bob_id, diana_id);
+
+        // Display network after adding friendships
+        network.printGraph();
         System.out.println("-------------------------------------------------");
+
+        // Remove a friendship
+        network.removeFriend(alice_id, bob_id);
+
+        // Display network after removing friendship
+        network.printGraph();
         System.out.println("-------------------------------------------------");
     }
 }
